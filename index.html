@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TODO App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>
     <div class="container center">
       <h1 class="center title">My TODO App</h1>
+
       <div class="flow-right controls">
         <span>Item count: <span id="item-count">0</span></span>
         <span>Unchecked count: <span id="unchecked-count">0</span></span>
       </div>
+
+      <div class="advice-box visible" id="advice-box">
+        <span id="advice-text">Натисніть кнопку, щоб отримати пораду дня 💡</span>
+        <button class="button-small" id="advice-btn" onClick="fetchAdvice()">Порада дня</button>
+      </div>
+
       <button class="button center" onClick="newTodo()">New TODO</button>
-      <ul id="todo-list" class="todo-list"></ul>
+
+      <p id="loading-msg" class="loading-msg">Завантаження задач...</p>
+
+    <ul id="todo-list" class="todo-list"></ul>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
